@@ -36,19 +36,19 @@ class MainActivity : ComponentActivity() {
                     ObserveAsEvents(events = viewModel.events) { event ->
                         when(event) {
                             is CoinListEvent.Error -> {
-//                                Toast.makeText(
-//                                    context,
-//                                 //   event.error.toString(),
-//                                    Toast.LENGTH_LONG
-//                                ).show()
+                                Toast.makeText(
+                                    context,
+                                   event.error.toString(),
+                                    Toast.LENGTH_LONG
+                             ).show()
                             }
                         }
                     }
                     when {
                         state.selectedCoin != null -> {
                             CoinDetailScreen(
-                              //  state = state,
-                              //  modifier = Modifier.padding(innerPadding)
+                                state = state,
+                                modifier = Modifier.padding(innerPadding)
                             )
                         }
                         else -> {
